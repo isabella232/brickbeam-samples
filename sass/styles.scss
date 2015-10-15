@@ -1,0 +1,214 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700);
+
+$teal : #5eb9a5;
+$pink : #e13452;
+$green: #b3d149;
+$brown: #976b48;
+$kraft: #978261;
+$gray : #8a8786;
+
+$serif: 'PT Serif', serif;
+$sans: 'PT Sans', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $sans;
+  font-size: 0.9em;
+  background: #fff;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: $teal;
+}
+
+.container {
+  overflow: auto;
+  max-width: 1120px;
+  margin: 0px auto;
+}
+
+header.site,
+footer {
+  // background: $kraft url(../img/board.png) repeat left top;
+  overflow: auto;
+
+  .container {
+  }
+
+  h1 {
+    display: inline-block;
+    background: transparent url(../img/bbd_logo2.png) no-repeat -15px center;
+    background-size: auto 80%;
+    text-indent: -9999px;
+    padding: 20px 0;
+    width: 200px;
+    float: left;
+  }
+
+  .nav {
+    width: 80%;
+    float: right;
+    line-height: 75px;
+
+    li {
+      display: inline-block;
+      font-size: 1em;
+      font-weight: bold;
+      margin-right: 20px;
+
+      &.forum,
+      &.resources,
+      &.events,
+      &.projects {
+        text-transform: uppercase;
+      }
+
+      &.forum {
+        padding-left: 50px;
+      }
+
+      &.forum a {
+        color: $pink;
+      }
+
+      &.resources a {
+        color: $green;
+      }
+
+      &.events a {
+        color: $teal;
+      }
+
+      &.projects a {
+        color: $brown;
+      }
+
+      &.secondary a {
+        color: $gray;
+      }
+    }
+  }
+}
+
+header.site {
+  background: lighten($green, 25%);
+}
+
+footer {
+  background: $kraft;
+
+  h1 {
+    background-color: $kraft;
+  }
+
+  .container {
+    background: transparent url(../img/people.png) no-repeat center right;
+    background-size: auto 80%;
+  }
+}
+
+header.section {
+  background: $green;
+  margin-bottom: 1em;
+
+  .container {
+    padding: 40px 0px;
+    // background: transparent url(../img/fullboard.png) no-repeat right center;
+    background-size: auto 120%;
+  }
+
+
+  h2 {
+    font-size: 5em;
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
+
+.sidebar  {
+  max-width: 20%;
+  float: left;
+
+  .in {
+    padding-left: 0;
+  }
+
+  h3 {
+    font-family: $sans;
+    font-size: 1em;
+    letter-spacing: 0;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    color: $brown;
+    font-weight: bold;
+  }
+
+  .subnav {
+    li {
+      list-style: none;
+      text-indent: 0;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.main {
+  max-width: 80%;
+  background: #fff;
+  float: right;
+  overflow: auto;
+
+  .in {
+    padding: 10px 50px;
+  }
+
+}
+
+.content {
+  width: 80%;
+  float: left;
+
+  h3 {
+    font-size: 2em;
+    font-family: $sans;
+    letter-spacing: -1px;
+    margin-bottom: 0.75em;
+    padding-bottom: 0.25em;
+    font-weight: bold;
+    background: transparent url(../img/peg.png) repeat-x left bottom;
+  }
+
+  .sidebar {
+    float: right;
+  }
+
+  .in {
+    padding: 0;
+  }
+}
+
+.in {
+  padding: 20px;
+}
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.8;
+  font-family: $serif;
+  font-size: 18px;
+}
+
+.row {
+}
