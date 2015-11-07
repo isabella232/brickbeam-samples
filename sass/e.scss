@@ -1,0 +1,251 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700);
+
+$teal : #5eb9a5;
+$pink : #e13452;
+$green: #b3d149;
+$brown: #976b48;
+$kraft: #978261;
+$gray : #8a8786;
+
+$serif: 'PT Serif', serif;
+$sans: 'PT Sans', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $sans;
+  font-size: 18px;
+  background: #fff;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: $teal;
+}
+
+.container {
+  overflow: auto;
+  margin: 0px auto;
+}
+
+.all {
+  overflow: auto;
+  margin: 0px auto;
+  background: lighten($green, 30%);
+}
+
+.meta,
+.main {
+  width: 50%;
+  float: left;
+}
+
+.meta {
+  >.in {
+    max-width: 550px;
+    padding-right:0px;
+    padding-left: 0px;
+    float: right;
+    height: 100vh;
+  }
+}
+
+header.site {
+  overflow: auto;
+  width: 40%;
+  float: left;
+  height: 100vh;
+  background: lighten($green, 30%);
+
+  h1 {
+    background: transparent url(../img/bbd_logo1.png) no-repeat left top;
+    display: inline-block;
+    background-size: contain;
+    text-indent: -9999px;
+    padding: 0;
+    height: 200px;
+    width: 80%;
+  }
+}
+
+.main {
+  overflow: auto;
+
+  >.in {
+    background: #fff;
+    max-width: 560px;
+    padding-left: 20px;
+    padding-right: 50px;
+    border-right: 5px solid lighten($green, 20%);
+    float: left;
+  }
+
+}
+
+.container.resources {
+  background: lighten($green, 25%); // maybe d5e69a
+  width: 50%;
+}
+
+header.section {
+  margin-bottom: 1em;
+
+  .container {
+    padding: 40px 0px;
+    // background: transparent url(../img/fullboard.png) no-repeat right center;
+    background-size: auto 120%;
+  }
+
+  h2 {
+    font-size: 3em;
+    font-weight: bold;
+    color: $pink;
+  }
+}
+
+
+.nav {
+  // padding: 0 20px 20px 13px;
+  padding-left: 5%;
+
+  li {
+    display: block;
+    font-size: 20px;
+    font-family: $serif;
+    margin-bottom: 1.5em;
+    line-height: 1em;
+
+    &.forum,
+    &.resources,
+    &.events,
+    &.projects {
+      text-transform: uuppercase;
+      font-weight: bold;
+    }
+
+    &.forum {
+    }
+
+    a {
+      color: #333;
+      padding-bottom: 5px;
+    }
+
+    &.active a,
+    a:hover {
+      background: transparent url(../img/peg.png) repeat-x left bottom;
+      background-size: 8px 8px;
+    }
+
+    &.resources.active a,
+    &.resources a:hover {
+      color: $green;
+    }
+
+
+    &.forum.active a,
+    &.forum a:hover {
+      color: $pink;
+    }
+
+
+    &.events.active a,
+    &.events a:hover {
+      color: $teal;
+    }
+
+    &.projects.active a,
+    &.projects a:hover {
+      color: $brown;
+    }
+
+    &.secondary a {
+      color: $gray;
+    }
+  }
+}
+
+.sidebar  {
+  max-width: 60%;
+  float: right;
+  font-size: 0.9em;
+
+  .in {
+    padding: 20px;
+    // padding-top: 16em;
+    min-height: 100vh;
+    background: #fff;
+    border-left: 5px solid lighten($green, 20%);
+  }
+
+  h3 {
+    font-family: $sans;
+    font-size: 1em;
+    letter-spacing: 0;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .subnav {
+    li {
+      list-style: none;
+      text-indent: 0;
+      margin-bottom: 1em;
+      a {
+        // color: #fff;
+      }
+    }
+  }
+}
+
+
+.content {
+  float: left;
+  max-width: 760px;
+
+  h3 {
+    font-size: 2em;
+    font-family: $sans;
+    letter-spacing: -1px;
+    margin-bottom: 0.75em;
+    padding-bottom: 0.25em;
+    //background: transparent url(../img/peg.png) repeat-x left bottom;
+  }
+
+  .sidebar {
+    float: right;
+  }
+
+}
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.8;
+  font-family: $serif;
+  font-size: 18px;
+}
+
+
+footer {
+  background: $kraft;
+
+  h1 {
+    background-color: $kraft;
+  }
+
+  .container {
+    background: transparent url(../img/people.png) no-repeat center right;
+    background-size: auto 80%;
+  }
+}

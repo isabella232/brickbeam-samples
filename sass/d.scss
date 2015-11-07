@@ -8,6 +8,8 @@ $brown: #976b48;
 $kraft: #978261;
 $gray : #8a8786;
 
+$focus: $green;
+
 $serif: 'PT Serif', serif;
 $sans: 'PT Sans', sans-serif;
 
@@ -19,7 +21,7 @@ $sans: 'PT Sans', sans-serif;
 body {
   font-family: $sans;
   font-size: 18px;
-  background: #fff;
+  background: lighten($focus, 30%);
   color: #333;
 }
 
@@ -34,44 +36,60 @@ a {
 
 .container {
   overflow: auto;
-  // max-width: 1120px;
+  max-width: 1120px;
   margin: 0px auto;
 }
 
 .all {
   overflow: auto;
-  max-width: 1120px;
   margin: 0px auto;
 }
 
-header.site,
-footer {
-  // background: $kraft url(../img/board.png) repeat left top;
+.meta {
+  width: 45%;
+  float: left;
+
+  >.in {
+    padding-top: 0;
+    overflow: auto;
+    border-right: 5px solid lighten($focus, 20%);
+  }
+}
+
+header.site {
   overflow: auto;
+  width: 50%;
+  float: right;
 
   .container {
   }
 
+  .in {
+    padding: 0;
+  }
+
   h1 {
     display: inline-block;
-    background: transparent url(../img/bbd_logo1.png) no-repeat -15px center;
-    background-size: auto 100%;
+    background: transparent url(../img/bbd_logo2.png) no-repeat -25px center;
+    background-size: 100% auto;
     text-indent: -9999px;
     padding: 20px 0;
     width: 100%;
-    height: 150px;
+    height: 100px;
     float: left;
+    margin-top: 0;
   }
 
   .nav {
-    display: inline-block;
-    padding: 20px 20px 20px 13px;
+    padding: 20px 0px 20px 0px;
 
     li {
-      display: block;
-      font-size: 18px;
+      display: inline-block;
+      font-size: 20px;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      width: 49%;
+      font-family: $serif;
 
       &.forum,
       &.resources,
@@ -82,15 +100,23 @@ footer {
 
       a {
         color: #333;
+        padding-bottom: 5px;
+        display: inline-block;
+        margin-right: 15px;
       }
 
-      /*
+      &.active a,
+      a:hover {
+        background: transparent url(../img/peg.png) repeat-x left bottom;
+        background-size: 8px 8px;
+      }
+
       &.forum a {
         color: $pink;
       }
 
       &.resources a {
-        color: $green;
+        color: darken($green, 10%);
       }
 
       &.events a {
@@ -104,28 +130,11 @@ footer {
       &.secondary a {
         color: $gray;
       }
-      */
 
     }
   }
 }
 
-/*
-.c header.site .nav li.resources a {
-  color: #fff;
-} */
-
-header.site {
-  height: 100vh;
-  width: 20%;
-  float: left;
-  background: lighten($green, 25%);
-}
-
-.c header.site {
-  //
-  // background: $green;
-}
 
 footer {
   background: $kraft;
@@ -161,15 +170,28 @@ header.section {
   h2 {
     font-size: 3em;
     font-weight: bold;
+    text-transform: uppercase;
+    color: darken($focus, 0%);
   }
 }
 
 
 .sidebar  {
-  max-width: 28%;
-  margin-right: 5%;
-  float: left;
-  font-size: 0.9em;
+  width: 25%;
+  // min-width: 250px;
+  clear: both;
+  float: right;
+  font-size: 0.85em;
+
+  .in {
+    padding-right: 20px;
+    padding-left: 0;
+    padding-top: 0;
+  }
+
+  a {
+    color: #333;
+  }
 
   h3 {
     font-family: $sans;
@@ -195,25 +217,28 @@ header.section {
 
 .main {
   float: right;
-  width: 66%;
+  width: 55%;
+  min-width: 750px;
   overflow: auto;
 
-  .in {
-    padding: 0;
-    padding-right: 50px;
-  }
+  background: #fff url(../img/peg.png) repeat-y left top;
 
+  .in {
+    padding: 0px 0px 50px 50px;
+  }
 }
 
 .content {
   float: left;
-  max-width: 760px;
+  max-width: 75%;
+  min-width: 750px;
 
   h3 {
-    font-size: 2em;
-    font-family: $sans;
+    font-size: 3.5em;
+    line-height: 1em;
+    font-family: $serif;
     letter-spacing: -1px;
-    margin-bottom: 0.75em;
+    margin-bottom: 0em;
     padding-bottom: 0.25em;
     //background: transparent url(../img/peg.png) repeat-x left bottom;
   }
@@ -236,6 +261,14 @@ p {
   line-height: 1.8;
   font-family: $serif;
   font-size: 18px;
+}
+
+p.byline {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-bottom: 2em;
+  font-family: $sans;
 }
 
 .row {

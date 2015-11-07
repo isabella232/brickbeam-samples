@@ -8,6 +8,8 @@ $brown: #976b48;
 $kraft: #978261;
 $gray : #8a8786;
 
+$focus: $green;
+
 $serif: 'PT Serif', serif;
 $sans: 'PT Sans', sans-serif;
 
@@ -18,13 +20,31 @@ $sans: 'PT Sans', sans-serif;
 
 body {
   font-family: $sans;
-  font-size: 0.9em;
+  font-size: 1em;
   background: #fff;
   color: #333;
 }
 
 h1, h2, h3 {
   font-weight: normal;
+}
+
+h3 {
+  font-family: $sans;
+  font-size: 1em;
+  letter-spacing: 0;
+  margin-bottom: 0em;
+  margin-top: 1em;
+  color: darken($focus, 40%);
+  font-weight: bold;
+}
+
+p.byline {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 2em;
+  font-family: $sans;
 }
 
 a {
@@ -59,38 +79,58 @@ footer {
   .nav {
     width: 80%;
     float: right;
-    line-height: 75px;
+    text-align: right;
+    line-height: 80px;
 
     li {
       display: inline-block;
-      font-size: 1em;
-      font-weight: bold;
+      font-weight: normal;
       margin-right: 20px;
+      font-size: 20px;
+      font-family: $serif;
 
       &.forum,
       &.resources,
       &.events,
       &.projects {
-        text-transform: uppercase;
+        text-transform: uuppercase;
+        font-weight: bold;
       }
 
       &.forum {
         padding-left: 50px;
       }
 
-      &.forum a {
-        color: $pink;
+      a {
+        color: #333;
+        padding-bottom: 5px;
       }
 
-      &.resources a {
+      &.active a,
+      a:hover {
+        background: transparent url(../img/peg.png) repeat-x left bottom;
+        background-size: 8px 8px;
+      }
+
+      &.resources.active a,
+      &.resources a:hover {
         color: $green;
       }
 
-      &.events a {
+
+      &.forum.active a,
+      &.forum a:hover {
+        color: $pink;
+      }
+
+
+      &.events.active a,
+      &.events a:hover {
         color: $teal;
       }
 
-      &.projects a {
+      &.projects.active a,
+      &.projects a:hover {
         color: $brown;
       }
 
@@ -102,7 +142,7 @@ footer {
 }
 
 header.site {
-  background: lighten($green, 25%);
+  background: #fff;
 }
 
 footer {
@@ -119,7 +159,7 @@ footer {
 }
 
 header.section {
-  background: $green;
+  background: $focus;
   margin-bottom: 1em;
 
   .container {
@@ -136,55 +176,98 @@ header.section {
   }
 }
 
+.actionbar  {
+  max-width: 22%;
+  float: left;
+  margin-top: 20px;
+
+  h3 {
+    color: darken($focus, 30%);
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 0.5em;
+  }
+
+  a {
+    color: darken($focus, 40%);
+    border-bottom: 1px dotted darken($focus, 30%);
+  }
+
+  .action {
+    margin-bottom: 2em;
+  }
+}
 
 .sidebar  {
-  max-width: 20%;
+  max-width: 18%;
   float: left;
+  margin-top: 20px;
 
   .in {
     padding-left: 0;
-  }
+    border: 5px solid lighten($focus, 16%);
+    border-radius: 5px;
+    border-width: 5px 0px 5px 5px;
+    background: lighten($focus, 30%);
+    padding-left: 20px;
 
-  h3 {
-    font-family: $sans;
-    font-size: 1em;
-    letter-spacing: 0;
-    margin-bottom: 0.5em;
-    margin-top: 1em;
-    color: $brown;
-    font-weight: bold;
   }
 
   .subnav {
+    margin-bottom: 2em;
+
     li {
       list-style: none;
       text-indent: 0;
-      margin-bottom: 1em;
+      margin-bottom: 0.75em;
+      line-height: 1em;
+
+      a {
+        color: #333;
+      }
     }
   }
 }
 
-.main {
-  max-width: 80%;
-  background: #fff;
-  float: right;
-  overflow: auto;
 
-  .in {
-    padding: 10px 50px;
+.all {
+  background: lighten($focus, 20%);
+  overflow: auto
+}
+
+.main {
+  max-width: 60%;
+  float: left;
+  overflow: auto;
+  margin-bottom: 50px;
+
+  >.in {
+    padding: 50px 50px 20px;
+    border: 5px solid lighten($focus, 10%);
+    border-radius: 5px;
+
+    background: #fff;
+    overflow: auto
   }
 
 }
 
 .content {
-  width: 80%;
   float: left;
 
   h3 {
     font-size: 2em;
     font-family: $sans;
     letter-spacing: -1px;
-    margin-bottom: 0.75em;
+    margin-bottom: 0em;
+    margin-top: 0;
     padding-bottom: 0.25em;
     font-weight: bold;
     background: transparent url(../img/peg.png) repeat-x left bottom;
